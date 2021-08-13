@@ -1,0 +1,67 @@
+*{
+	font-family: Arial;
+}
+body{
+	background: url(bg.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+}
+.kotak{
+	width: 350px;
+	background: #c3d0cd;
+	/*meletakkan form ke tengah*/
+	margin: 80px auto;
+	padding: 20px 20px;
+	transition: 0.5s;
+	box-shadow: 0px 0px 100px 4px #d6d6d6;
+}
+.kotak2{
+	width: 600px;
+	background: #c3d0cd;
+	/*meletakkan form ke tengah*/
+	margin: 20px auto;
+	padding: 20px 20px;
+	transition: 0.5s;
+	box-shadow: 0px 0px 100px 4px #d6d6d6;
+}
+.form{
+	/*membuat lebar form penuh*/
+	box-sizing: border-box;
+	width: 100%;
+	padding: 5px;
+	font-size: 11pt;
+	margin-bottom: 0px;
+	transition: 0.5s;
+}
+.tombol_simpan{
+	background: #4190d1;
+	color: white;
+	font-size: 11pt;
+	width: 49%;
+	border: none;
+	border-radius: 3px;
+	padding: 10px 20px;
+	transition: 0.5s;
+}
+.tombol_simpan:hover{
+	background: #2dad56;
+	transition: 0.5s;
+}
+.tombol_batal{
+	background: #2dad56;
+	color: white;
+	font-size: 11pt;
+	width: 49%;
+	border: none;
+	border-radius: 3px;
+	padding: 10px 20px;
+	float: right;
+	transition: 0.5s;
+}
+.tombol_batal:hover{
+	background: #4190d1;
+	transition: 0.5s;
+textarea{
+
+}

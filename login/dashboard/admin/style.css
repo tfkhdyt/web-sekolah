@@ -1,0 +1,190 @@
+*{
+	font-family: Arial;
+}
+#navbar{
+	overflow: hidden;
+	background-color: #2c97df;
+}
+#navbar a{
+	float: left;
+	display: block;
+	color: #f2f2f2;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	font-size: 17px;
+}
+#navbar a:hover{
+	background-color: #7d7574;
+	color: #fff;
+}
+#navbar a:active{
+	background-color: #c0392b;
+	color: #fff;
+}
+.nav{
+	width: 1400px;
+	margin-left: 20px;
+	margin-right: 20px;
+}
+.nav a{
+	width: 105px;
+}
+body{
+	background: url(bg.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+
+}
+
+.zebra{
+	border-collapse: collapse;
+}
+table tr:nth-child(even){
+	background: #f5f5f5;
+}
+table tr:nth-child(odd){
+	background: #d5dde8;
+}
+.zebra th{
+	background: #4190d1;
+	padding-left: 14px;
+	padding-right: 8px;
+	border: 1px solid #cccccc;
+	text-align: center;
+	color: #ffffff;
+	height: 45px;
+}
+.zebra td{
+	font-size: 11pt;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	text-align: center;
+}
+input, select{
+	font-size: 10pt;
+}
+.kotak2{
+	position: fixed;
+	bottom: 0px;
+	width: 90%;
+	margin: 0 auto;
+	color: white;
+}
+.halaman{
+	width: 40px;
+	height: 40px;
+	color: white;
+	background: #4190d1;
+	border-bottom: 5px solid #2dad56;
+	border-top: 0;
+	border-right: 0;
+	border-left: 0;
+	transition: 0.5s;
+}
+.halaman:hover{
+	color: white;
+	background: #2dad56;
+	border-bottom: 5px solid #4190d1;
+	transition: 0.5s;
+}
+.aktif{
+	width: 40px;
+	height: 40px;
+	color: white;
+	background: #2dad56;
+	border-bottom: 5px solid #4190d1;
+	border-top: 0;
+	border-right: 0;
+	border-left: 0;
+	transition: 0.5s;
+}
+.tombol_ubah{
+	width: 80px;
+	height: 40px;
+	background: #4190d1;
+	color:white;
+	border-top: 0;
+	border-left: 0;
+	border-right: 0;
+	border-bottom: 5px solid #2dad56;
+	text-decoration: none;
+	font-family: sans-serif;
+	font-size: 11pt;
+	transition: 0.5s;
+}
+.tombol_ubah:hover{
+	background: #2dad56;
+	color:white;
+	border-bottom: 5px solid #4190d1;
+	transition: 0.5s;
+}
+.tombol_hapus{
+	width: 80px;
+	height: 40px;
+	background: #2dad56;
+	color:white;
+	border-top: 0;
+	border-left: 0;
+	border-right: 0;
+	border-bottom: 5px solid #4190d1;
+	margin-left: -10px;
+	text-decoration: none;
+	font-family: sans-serif;
+	font-size: 11pt;
+	transition: 0.5s;
+}
+.tombol_hapus:hover{
+	background: #4190d1;
+	color:black;
+	border-bottom: 5px solid #2dad56;
+	transition: 0.5s;
+}
+.tombol_tambah{
+	width: 125px;
+	height: 40px;
+	background: #2c97df;
+	border-top: 0;
+	border-left: 0;
+	border-right: 0;
+	margin-left: 0px;
+	color:white;
+	text-decoration: none;
+	font-family: sans-serif;
+	font-size: 11pt;
+	transition: 0.5s;
+	float: left;
+}
+.tombol_tambah:hover{
+	background: #7d7574;
+	color:white;
+	transition: 0.5s;
+}
+.tombol_logout{
+	width: 120px;
+	height: 40px;
+	background: #e37a39;
+	border-top: 0;
+	border-left: 0;
+	border-right: 0;
+	margin-left: 2px;
+	color:white;
+	text-decoration: none;
+	font-family: sans-serif;
+	font-size: 11pt;
+	transition: 0.5s;
+	float: right;
+}
+.tombol_logout:hover{
+	background: #ad5d2b;
+	color:white;
+	transition: 0.5s;
+p{
+	background-color: #4190d1;
+	height: 30px;
+	width: 260px;
+	padding-top: 10px;
+}
