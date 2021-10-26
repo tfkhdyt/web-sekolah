@@ -5,32 +5,32 @@
 	<link rel="stylesheet" type="text/css" href="../style2.css">
 </head>
 <body>
-	<?php 
-		include "../koneksi.php";
-		$kode = $_GET['kode'];
-		$query = "SELECT * FROM user WHERE kode='$kode' ";
-		$sql = mysqli_query($koneksi, $query);
-		$data = mysqli_fetch_array($sql);
-	?>
+	<?php
+ include "../koneksi.php";
+ $kode = $_GET["kode"];
+ $query = "SELECT * FROM user WHERE kode='$kode' ";
+ $sql = mysqli_query($koneksi, $query);
+ $data = mysqli_fetch_array($sql);
+ ?>
 <div class="kotak">
 	<center><h3>Ubah Data Siswa</h3></center>
 	<form method="post" action="proses_ubah_data_siswa.php?kode=<?= $kode ?>;" enctype="multipart/form-data">
 		<table cellpadding="8">
 			<tr>
 				<td>Id</td>
-				<td><input type="text" name="id" value="<?= $kode?>" readonly></td>
+				<td><input type="text" name="id" value="<?= $kode ?>" readonly></td>
 			</tr>
 			<tr>
 				<td>Nama</td>
-				<td><input type="text" name="nama" value="<?=$data['nama']?>"></td>
+				<td><input type="text" name="nama" value="<?= $data["nama"] ?>"></td>
 			</tr>
 			<tr>
 				<td>Kelas</td>
-				<td><input type="text" name="kelas" value="<?php echo $data['kelas']; ?>"></td>
+				<td><input type="text" name="kelas" value="<?php echo $data["kelas"]; ?>"></td>
 			</tr>
 			<tr>
 				<td valign="top">Alamat</td>
-				<td><textarea name="alamat" class="form"><?= $data['alamat']; ?></textarea></td>
+				<td><textarea name="alamat" class="form"><?= $data["alamat"] ?></textarea></td>
 			</tr>
 			<tr>
 				<td>Foto</td>

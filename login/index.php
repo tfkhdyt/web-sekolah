@@ -5,17 +5,15 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-	<?php
-		if(isset($_GET['pesan'])){
-			if($_GET['pesan']=="gagal"){
-				echo"<div class='alert'>Username dan Password tidak sesuai!</div>";
-			}else if($_GET['pesan']=="logout"){
-				echo"<div class=berhasil>Anda berhasil logout!</div>";
-			}else{
-				echo"<div class='alert'>Anda belum login!</div>";
-			}
-		}
-	?>
+	<?php if (isset($_GET["pesan"])) {
+   if ($_GET["pesan"] == "gagal") {
+     echo "<div class='alert'>Username dan Password tidak sesuai!</div>";
+   } elseif ($_GET["pesan"] == "logout") {
+     echo "<div class=berhasil>Anda berhasil logout!</div>";
+   } else {
+     echo "<div class='alert'>Anda belum login!</div>";
+   }
+ } ?>
 	<br><br>
 	<div class="kotak_login">
 		<center><h2>Halaman Login</h2></center><hr>

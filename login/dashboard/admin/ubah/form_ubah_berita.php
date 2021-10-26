@@ -9,32 +9,38 @@
     </script>
 </head>
 <body>
-	<?php 
-		include "../koneksi.php";
-		$id = $_GET['id'];
-		$query = "SELECT * FROM berita WHERE id='$id' ";
-		$sql = mysqli_query($koneksi, $query);
-		$data = mysqli_fetch_array($sql);
-	?>
+	<?php
+ include "../koneksi.php";
+ $id = $_GET["id"];
+ $query = "SELECT * FROM berita WHERE id='$id' ";
+ $sql = mysqli_query($koneksi, $query);
+ $data = mysqli_fetch_array($sql);
+ ?>
 <div class="kotak2">
 	<center><h3>Ubah Berita</h3></center>
 	<form method="post" action="proses_ubah_berita.php?id=<?= $id ?>;" enctype="multipart/form-data">
 		<table cellpadding="8">
 			<tr>
 				<td>id</td>
-				<td><input type="text" size="2" name="id" value="<?= $id?>" readonly></td>
+				<td><input type="text" size="2" name="id" value="<?= $id ?>" readonly></td>
 			</tr>
 			<tr>
 				<td>Judul</td>
-				<td><input type="text" size="67" name="judul" value="<?php echo $data['judul']; ?>"></td>
+				<td><input type="text" size="67" name="judul" value="<?php echo $data[
+      "judul"
+    ]; ?>"></td>
 			</tr>
 			<tr>
 				<td>Tanggal</td>
-				<td><input type="date" name="tanggal" value="<?php echo $data['tanggal']; ?>"></td>
+				<td><input type="date" name="tanggal" value="<?php echo $data[
+      "tanggal"
+    ]; ?>"></td>
 			</tr>
 			<tr>
 				<td valign="top">Deskripsi</td>
-				<td><textarea name="deskripsi" rows="20" style="resize: vertical; width: 500px;"><?= $data['deskripsi']; ?></textarea></td>
+				<td><textarea name="deskripsi" rows="20" style="resize: vertical; width: 500px;"><?= $data[
+      "deskripsi"
+    ] ?></textarea></td>
 			</tr>
 			<tr>
 				<td>Gambar</td>

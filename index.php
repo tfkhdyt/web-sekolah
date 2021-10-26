@@ -81,20 +81,27 @@
         <section class="feature_area p_120" id="selayang">
         	<div class="container">
         		<div class="main_title">
-                    <?php 
+                    <?php
                     include "koneksi.php";
-                    $selayang = mysqli_query($koneksi, "SELECT * FROM selayang");
-                    $data = mysqli_fetch_array($selayang)
-                     ?>
+                    $selayang = mysqli_query(
+                      $koneksi,
+                      "SELECT * FROM selayang",
+                    );
+                    $data = mysqli_fetch_array($selayang);
+                    ?>
         			<center><h2>Selayang Pandang</h2></center><br>
                     <p style="width: 1000px;">
-                        <?= $data['deskripsi'] ?>
+                        <?= $data["deskripsi"] ?>
                     </p><br>
                     <p style="text-align: right;">
-                        <?= $data['tanggal'] ?> <br>
+                        <?= $data["tanggal"] ?> <br>
                     </p>
-                    <p style="text-align: right;"><?= $data['status'] ?>, <br><br><br></p>
-                    <p style="text-align: right;"><u><?= $data['nama'] ?></u></p>
+                    <p style="text-align: right;"><?= $data[
+                      "status"
+                    ] ?>, <br><br><br></p>
+                    <p style="text-align: right;"><u><?= $data[
+                      "nama"
+                    ] ?></u></p>
                     
 
                     
@@ -106,56 +113,59 @@
             <div class="container">
                 <div class="main_title">
                     <center><h2>Profil Sekolah</h2><br>
-                        <?php 
-                            include "koneksi.php";
-                            $sql = mysqli_query($koneksi, "SELECT * FROM profil_sekolah");
+                        <?php
+                        include "koneksi.php";
+                        $sql = mysqli_query(
+                          $koneksi,
+                          "SELECT * FROM profil_sekolah",
+                        );
 
-                            $data = mysqli_fetch_array($sql);
+                        $data = mysqli_fetch_array($sql);
                         ?>
                     <table border="0" cellpadding="5">
                         <tr>
                             <td><b>Nama Sekolah</b></td>
-                            <td>: <?= $data['nama']?></td>
+                            <td>: <?= $data["nama"] ?></td>
                         </tr>
                         <tr>
                             <td><b>NPSN</b></td>
-                            <td>: <?= $data['npsn']?></td>
+                            <td>: <?= $data["npsn"] ?></td>
                         </tr>
                         <tr>
                             <td><b>Alamat</b></td>
-                            <td>: <?= $data['alamat']?></td>
+                            <td>: <?= $data["alamat"] ?></td>
                         </tr>
                         <tr>
                             <td><b>Kelurahan</b></td>
-                            <td>: <?= $data['kelurahan']?></td>
+                            <td>: <?= $data["kelurahan"] ?></td>
                         </tr>
                         <tr>
                             <td><b>Kecamatan</b></td>
-                            <td>: <?= $data['kecamatan']?></td>
+                            <td>: <?= $data["kecamatan"] ?></td>
                         </tr>
                         <tr>
                             <td><b>Kabupaten/Kota</b></td>
-                            <td>: <?= $data['kabupaten']?></td>
+                            <td>: <?= $data["kabupaten"] ?></td>
                         </tr>
                         <tr>
                             <td><b>Provinsi</b></td>
-                            <td>: <?= $data['provinsi']?></td>
+                            <td>: <?= $data["provinsi"] ?></td>
                         </tr>
                         <tr>
                             <td><b>Kode Pos</b></td>
-                            <td>: <?= $data['kodepos']?></td>
+                            <td>: <?= $data["kodepos"] ?></td>
                         </tr>
                         <tr>
                             <td><b>Status Sekolah</b></td>
-                            <td>: <?= $data['status']?></td>
+                            <td>: <?= $data["status"] ?></td>
                         </tr>
                         <tr>
                             <td><b>Waktu Penyelenggaraan</b></td>
-                            <td>: <?= $data['waktu']?></td>
+                            <td>: <?= $data["waktu"] ?></td>
                         </tr>
                         <tr>
                             <td><b>Jenjang Pendidikan</b></td>
-                            <td>: <?= $data['jenjang']?></td>
+                            <td>: <?= $data["jenjang"] ?></td>
                         </tr>
                     </table></center>
                 </div>
@@ -170,20 +180,27 @@
                     <center><h2>Berita</h2></center>
                 </div>
                 <div class="latest_news_inner row">
-                    <?php 
-                        include "koneksi.php";
-                        $sql = mysqli_query($koneksi, "SELECT * FROM berita ORDER BY tanggal DESC");
+                    <?php
+                    include "koneksi.php";
+                    $sql = mysqli_query(
+                      $koneksi,
+                      "SELECT * FROM berita ORDER BY tanggal DESC",
+                    );
 
-                        while($data = mysqli_fetch_array($sql)): 
-                    ?>
+                    while ($data = mysqli_fetch_array($sql)): ?>
                     <div class="col-lg-4">
                         <div class="l_news_item">
-                            <a class="date" href="#"><?= $data['tanggal'] ?></a>
-                            <a href="#"><img src="login/dashboard/images/<?= $data['gambar'] ?>" width="320" height="231">
-                            <h4><?= $data['judul'] ?></h4></a><p><?= $data['deskripsi'] ?></p>
+                            <a class="date" href="#"><?= $data["tanggal"] ?></a>
+                            <a href="#"><img src="login/dashboard/images/<?= $data[
+                              "gambar"
+                            ] ?>" width="320" height="231">
+                            <h4><?= $data["judul"] ?></h4></a><p><?= $data[
+  "deskripsi"
+] ?></p>
                         </div>
                     </div>
-                    <?php endwhile; ?>
+                    <?php endwhile;
+                    ?>
                 </div>
             
             </div>
@@ -193,22 +210,28 @@
             <div class="container">
                 <div class="main_title">
                     <center><h2>About Us</h2></center><br>
-                    <?php 
-                        include "koneksi.php";
-                        $sql = mysqli_query($koneksi, "SELECT * FROM about");
-                        $i = 1;
-                        while($data = mysqli_fetch_array($sql)): 
-                    ?>
+                    <?php
+                    include "koneksi.php";
+                    $sql = mysqli_query($koneksi, "SELECT * FROM about");
+                    $i = 1;
+                    while ($data = mysqli_fetch_array($sql)): ?>
                     <div class="row mb-5 align-items-center">
-                        <div class="col-lg-7 mb-5 <?php if($i % 2 == 0){echo "order-1 order-lg-2";} ?>" data-aos="fade-up" data-aos-delays="100">
-                            <img src="login/dashboard/images/<?= $data['gambar'] ?>" class="img-fluid">
+                        <div class="col-lg-7 mb-5 <?php if ($i % 2 == 0) {
+                          echo "order-1 order-lg-2";
+                        } ?>" data-aos="fade-up" data-aos-delays="100">
+                            <img src="login/dashboard/images/<?= $data[
+                              "gambar"
+                            ] ?>" class="img-fluid">
                         </div>
                         <div class="col-lg-4 mr-auto" data-aos="fade-up" data-aos-delays="200">
-                            <h2 class="text-black mb-4"><?= $data['judul'] ?></h2>
-                            <p class="mb-4"><?= $data['deskripsi'] ?></p>
+                            <h2 class="text-black mb-4"><?= $data[
+                              "judul"
+                            ] ?></h2>
+                            <p class="mb-4"><?= $data["deskripsi"] ?></p>
                         </div>
                     </div>
-                    <?php $i++; endwhile; ?>
+                    <?php $i++;endwhile;
+                    ?>
                 </div>
             </div>
         </section>
@@ -226,14 +249,17 @@
                                 <div class="d-flex">
                                     <i class="fa fa-envelope-o" aria-hidden="true"></i>
                                 </div>
-                                <?php 
-                                    include "koneksi.php";
-                                    $sql = mysqli_query($koneksi, "SELECT * FROM kontak");
-                                    $data = mysqli_fetch_array($sql);
+                                <?php
+                                include "koneksi.php";
+                                $sql = mysqli_query(
+                                  $koneksi,
+                                  "SELECT * FROM kontak",
+                                );
+                                $data = mysqli_fetch_array($sql);
                                 ?>
                                 <div class="media-body">
                                     <h4>Email</h4>
-                                    <p><?= $data['email'] ?></p>
+                                    <p><?= $data["email"] ?></p>
                                 </div>
                             </div>
                         </div></a>
@@ -244,7 +270,7 @@
                                 </div>
                                 <div class="media-body">
                                     <h4>Telepon</h4>
-                                    <p><?= $data['telepon']?></p>
+                                    <p><?= $data["telepon"] ?></p>
                                 </div>
                             </div>
                         </div>

@@ -1,48 +1,67 @@
-<?php  
-	include "../koneksi.php";
+<?php
+include "../koneksi.php";
 
-	$id = $_GET['id'];
-	$judul = $_POST['judul'];
-	$tanggal = $_POST['tanggal'];
-	$deskripsi = $_POST['deskripsi'];
-	if(isset($_POST['ubah_foto'])){
-		$gambar = $_FILES['gambar']['name'];
-		$tmp = $_FILES['gambar']['tmp_name'];
-		$fotobaru = date('dmYHis').$gambar;
-		$path = "../../images/$fotobaru";
+$id = $_GET["id"];
+$judul = $_POST["judul"];
+$tanggal = $_POST["tanggal"];
+$deskripsi = $_POST["deskripsi"];
+if (isset($_POST["ubah_foto"])) {
+  $gambar = $_FILES["gambar"]["name"];
+  $tmp = $_FILES["gambar"]["tmp_name"];
+  $fotobaru = date("dmYHis") . $gambar;
+  $path = "../../images/$fotobaru";
 
-		if(move_uploaded_file($tmp, $path)){
-			$query = "SELECT * FROM info_sekolah WHERE id = '".$id."' ";
-			$sql = mysqli_query($koneksi, $query);
-			$data = mysqli_fetch_array($sql);
+  if (move_uploaded_file($tmp, $path)) {
+    $query = "SELECT * FROM info_sekolah WHERE id = '" . $id . "' ";
+    $sql = mysqli_query($koneksi, $query);
+    $data = mysqli_fetch_array($sql);
 
-			if(is_file("../images/".$data['gambar']))
-				unlink("../images/".$data['gambar']);
-			
+    if (is_file("../images/" . $data["gambar"])) {
+      unlink("../images/" . $data["gambar"]);
+    }
 
-			$query = "UPDATE info_sekolah SET judul = '".$judul."', tanggal = '".$tanggal."', deskripsi = '".$deskripsi."', gambar = '".$fotobaru."' WHERE id = '".$id."' ";
-			$sql = mysqli_query($koneksi, $query);
+    $query =
+      "UPDATE info_sekolah SET judul = '" .
+      $judul .
+      "', tanggal = '" .
+      $tanggal .
+      "', deskripsi = '" .
+      $deskripsi .
+      "', gambar = '" .
+      $fotobaru .
+      "' WHERE id = '" .
+      $id .
+      "' ";
+    $sql = mysqli_query($koneksi, $query);
 
-			if($sql){
-				header("location:../index.php?menu=info_sekolah");
-			}else{
-				echo "Maaf, terjadi kesalahan saat mencoba untuk menyimpan data ke database";
-				echo "<br><a href='form_ubah_info_sekolah.php?id=$id'>Kembali ke Form</a>";
-			}
-		}else{
-			echo "Maaf, gambar gagal untuk diupload";
-			echo "<br><a href='form_ubah_info_sekolah.php?id=$id'>Kembali ke Form</a>";
-		}
-	}else{
-		$query = "UPDATE info_sekolah SET judul = '".$judul."', tanggal = '".$tanggal."', deskripsi = '".$deskripsi."' WHERE id = '".$id."' ";
-		$sql = mysqli_query($koneksi, $query);
+    if ($sql) {
+      header("location:../index.php?menu=info_sekolah");
+    } else {
+      echo "Maaf, terjadi kesalahan saat mencoba untuk menyimpan data ke database";
+      echo "<br><a href='form_ubah_info_sekolah.php?id=$id'>Kembali ke Form</a>";
+    }
+  } else {
+    echo "Maaf, gambar gagal untuk diupload";
+    echo "<br><a href='form_ubah_info_sekolah.php?id=$id'>Kembali ke Form</a>";
+  }
+} else {
+  $query =
+    "UPDATE info_sekolah SET judul = '" .
+    $judul .
+    "', tanggal = '" .
+    $tanggal .
+    "', deskripsi = '" .
+    $deskripsi .
+    "' WHERE id = '" .
+    $id .
+    "' ";
+  $sql = mysqli_query($koneksi, $query);
 
-		if($sql){
-				header("location:../index.php?menu=info_sekolah");
-			}else{
-				echo "Maaf, terjadi kesalahan saat mencoba untuk menyimpan data ke database";
-				echo "<br><a href='form_ubah_info_sekolah.php?id=$id'>Kembali ke Form</a>";
-			}
-
-	}
+  if ($sql) {
+    header("location:../index.php?menu=info_sekolah");
+  } else {
+    echo "Maaf, terjadi kesalahan saat mencoba untuk menyimpan data ke database";
+    echo "<br><a href='form_ubah_info_sekolah.php?id=$id'>Kembali ke Form</a>";
+  }
+}
 ?>
